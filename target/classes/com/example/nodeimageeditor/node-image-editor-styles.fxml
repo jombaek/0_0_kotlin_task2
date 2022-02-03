@@ -19,37 +19,95 @@
         <menus>
             <Menu text="File">
                 <items>
-                    <MenuItem mnemonicParsing="false" text="Open" accelerator="Shortcut+O" />
-                    <MenuItem fx:id="saveMenuItem" mnemonicParsing="false" text="Save" disable="true" accelerator="Shortcut+S" />
-                    <MenuItem fx:id="saveAsMenuItem" mnemonicParsing="false" text="Save As..." disable="true" accelerator="Shortcut+Shift+S" />
+                    <MenuItem fx:id="openMenuItem" mnemonicParsing="false" text="Open" accelerator="Shortcut+O" onAction="#onOpenMenuClicked" />
+                    <MenuItem fx:id="saveMenuItem" mnemonicParsing="false" text="Save" disable="true" accelerator="Shortcut+S" onAction="#onSaveMenuClicked" />
+                    <MenuItem fx:id="saveAsMenuItem" mnemonicParsing="false" text="Save as..." disable="true" accelerator="Shortcut+Shift+S" onAction="#onSaveAsMenuClicked"/>
+                    <MenuItem fx:id="saveGraphMenuItem" mnemonicParsing="false" text="Save scene" disable="true" accelerator="Shortcut+G" onAction="#onSaveGraphMenuClicked" />
+                    <MenuItem fx:id="saveGraphAsMenuItem" mnemonicParsing="false" text="Save scene as..." disable="true" accelerator="Shortcut+Shift+G" onAction="#onSaveGraphAsMenuClicked"/>
+                    <MenuItem fx:id="openGraphMenuItem" mnemonicParsing="false" text="Open scene" accelerator="Shortcut+Shift+O" onAction="#onOpenGraphMenuClicked" />
                     <MenuItem mnemonicParsing="false" text="Exit" />
                 </items>
             </Menu>
         </menus>
     </MenuBar>
     <ScrollPane hbarPolicy="AS_NEEDED" vbarPolicy="NEVER" >
-        <StackPane>
-            <HBox fx:id="cutToolPanel" alignment="CENTER_LEFT" visible="false">
+        <HBox fx:id="toolPanel" alignment="CENTER_LEFT">
+            <StackPane fx:id="appModePanel" alignment="CENTER_LEFT">
                 <padding>
                     <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
                 </padding>
-                <Button fx:id="returnButton" text="Editor"/>
+                <Button fx:id="imageViewButton" text="Image View" prefHeight="50" onAction="#onImageViewButtonClick"/>
+                <Button fx:id="nodeViewButton" text="Node View" prefHeight="50" visible="false" onAction="#onNodeViewButtonClick"/>
+            </StackPane>
+            <HBox fx:id="nodesToolPanel" alignment="CENTER_LEFT">
+                <VBox style=" -fx-border-color:lightgray; -fx-border-width: 1; -fx-border-style: solid;" alignment="CENTER">
+                    <padding>
+                        <Insets bottom="10.0"/>
+                    </padding>
+                    <HBox spacing="10.0">
+                        <padding>
+                            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+                        </padding>
+                        <Button fx:id="floatNodeButton" text="Float Node"/>
+                        <Button fx:id="intNodeButton" text="Int Node"/>
+                        <Button fx:id="stringNodeButton" text="String Node"/>
+                        <Button fx:id="imageNodeButton" text="Image Node"/>
+                    </HBox>
+                    <Label text="Variables" style=" -fx-text-fill:dimgray;"/>
+                </VBox>
+                <VBox style=" -fx-border-color:lightgray; -fx-border-width: 1; -fx-border-style: solid;" alignment="CENTER">
+                    <padding>
+                        <Insets bottom="10.0"/>
+                    </padding>
+                    <HBox spacing="10.0">
+                        <padding>
+                            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+                        </padding>
+                        <Button fx:id="addTextNodeButton" text="Text"/>
+                        <Button fx:id="addImageNodeButton" text="Image"/>
+                    </HBox>
+                    <Label text="Add" style=" -fx-text-fill:dimgray;"/>
+                </VBox>
+                <VBox style=" -fx-border-color:lightgray; -fx-border-width: 1; -fx-border-style: solid;" alignment="CENTER">
+                    <padding>
+                        <Insets bottom="10.0"/>
+                    </padding>
+                    <HBox spacing="10.0">
+                        <padding>
+                            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+                        </padding>
+                        <Button fx:id="brightnessFilterButton" text="Brightness"/>
+                        <Button fx:id="greyFilterButton" text="Greyscale"/>
+                        <Button fx:id="sepiaFilterButton" text="Sepia"/>
+                        <Button fx:id="invertFilterButton" text="Invert"/>
+                        <Button fx:id="blurFilterButton" text="Blur"/>
+                    </HBox>
+                    <Label text="Filters" style=" -fx-text-fill:dimgray;"/>
+                </VBox>
+                <VBox style=" -fx-border-color:lightgray; -fx-border-width: 1; -fx-border-style: solid;" alignment="CENTER">
+                    <padding>
+                        <Insets bottom="10.0"/>
+                    </padding>
+                    <HBox spacing="10.0">
+                        <padding>
+                            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+                        </padding>
+                        <Button fx:id="moveTransformButton" text="Move"/>
+                        <Button fx:id="scaleTransformButton" text="Scale"/>
+                        <Button fx:id="rotateTransformButton" text="Rotate"/>
+                    </HBox>
+                    <Label text="Transform" style=" -fx-text-fill:dimgray;"/>
+                </VBox>
             </HBox>
-            <HBox fx:id="defaultToolPanel" alignment="CENTER_LEFT" spacing="20.0">
-                <padding>
-                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
-                </padding>
-                <Button fx:id="takeScreenshotButton" text="Button 1"/>
-                <Button fx:id="cutButton" text="Button 2"/>
-            </HBox>
-        </StackPane>
+        </HBox>
     </ScrollPane>
     <Pane prefHeight="10.0">
         <StackPane fx:id="canvasPane"
                    onMousePressed="#onCanvasMousePressed"
                    onMouseDragged="#onCanvasMouseDragged"
                    onMouseReleased="#onCanvasMouseReleased">
-            <Canvas fx:id="screenshotCanvas" />
+            <Canvas fx:id="imageCanvas" visible="false"/>
+            <Canvas fx:id="nodesCanvas" />
         </StackPane>
     </Pane>
 </VBox>

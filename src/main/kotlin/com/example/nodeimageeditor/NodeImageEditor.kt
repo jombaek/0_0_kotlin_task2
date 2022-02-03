@@ -8,7 +8,7 @@ import javafx.stage.Stage
 class NodeImageEditor : Application() {
     override fun start(stage: Stage) {
         val fxmlLoader = FXMLLoader(NodeImageEditor::class.java.getResource("node-image-editor-styles.fxml"))
-        val scene = Scene(fxmlLoader.load(), 1200.0, 800.0)
+        val scene = Scene(fxmlLoader.load(), 1087.0, 800.0)
         stage.title = "NodeImageEditor"
         stage.scene = scene
         stage.show()
