@@ -13,6 +13,9 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import com.example.nodeimageeditor.StartNode?>
+<?import com.example.nodeimageeditor.FinishNode?>
 <VBox xmlns:fx="http://javafx.com/fxml"
       fx:controller="com.example.nodeimageeditor.NodeImageEditorController">
     <MenuBar prefHeight="30.0" prefWidth="1000.0">
@@ -48,7 +51,7 @@
                         <padding>
                             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
                         </padding>
-                        <Button fx:id="floatNodeButton" text="Float Node"/>
+                        <Button fx:id="floatNodeButton" text="Float Node" onAction="#onFloatNodeButtonClick"/>
                         <Button fx:id="intNodeButton" text="Int Node"/>
                         <Button fx:id="stringNodeButton" text="String Node"/>
                         <Button fx:id="imageNodeButton" text="Image Node"/>
@@ -96,18 +99,23 @@
                         <Button fx:id="scaleTransformButton" text="Scale"/>
                         <Button fx:id="rotateTransformButton" text="Rotate"/>
                     </HBox>
-                    <Label text="Transform" style=" -fx-text-fill:dimgray;"/>
+                    <Label text="Transform" style="-fx-text-fill:dimgray;"/>
                 </VBox>
             </HBox>
         </HBox>
     </ScrollPane>
-    <Pane prefHeight="10.0">
+    <AnchorPane prefWidth="1087" prefHeight="700.0">
         <StackPane fx:id="canvasPane"
+                   AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
                    onMousePressed="#onCanvasMousePressed"
                    onMouseDragged="#onCanvasMouseDragged"
                    onMouseReleased="#onCanvasMouseReleased">
             <Canvas fx:id="imageCanvas" visible="false"/>
-            <Canvas fx:id="nodesCanvas" />
+            <AnchorPane fx:id="nodesPane"
+                        style=" -fx-background-color:rgba(50, 50, 50, 1);">
+                <StartNode x="0" y="220"/>
+                <FinishNode x="520" y="220"/>
+            </AnchorPane>
         </StackPane>
-    </Pane>
+    </AnchorPane>
 </VBox>

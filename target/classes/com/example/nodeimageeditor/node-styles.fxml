@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<fx:root fx:id="nodeMainPane"
+         maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+         prefHeight="96.0" prefWidth="150.0"
+         style="-fx-background-radius: 5 5 5 5; -fx-background-color: rgba(200,200,200,1);"
+         type="javafx.scene.layout.AnchorPane" xmlns:fx="http://javafx.com/fxml">
+    <children>
+        <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0"
+              style="-fx-background-radius: 5 5 5 5;">
+            <children>
+                <StackPane fx:id="titleBar" style="-fx-background-radius: 5 5 0 0; -fx-background-color: dimgrey;">
+                    <padding>
+                        <Insets bottom="5.0" top="5.0" left="5.0" right="5.0"/>
+                    </padding>
+                    <Label fx:id="titleLabel" alignment="CENTER"
+                           text="Label" style="-fx-text-fill:white;"/>
+                    <StackPane alignment="CENTER_RIGHT" maxWidth="140">
+                        <AnchorPane fx:id="titleClose"
+                                    style="-fx-background-radius: 100 100 100 100; -fx-background-color: rgba(255, 100, 100, 1);"
+                                    maxWidth="-Infinity" minWidth="-Infinity" prefWidth="15.0">
+                            <children>
+                                <Label AnchorPane.leftAnchor="2.0" text="⨉" style="-fx-text-fill:white;"/>
+                            </children>
+                        </AnchorPane>
+                    </StackPane>
+                </StackPane>
+                <HBox maxHeight="-Infinity" minHeight="-Infinity" prefHeight="69.0">
+                    <padding>
+                        <Insets bottom="5.0" top="5.0"/>
+                    </padding>
+                    <children>
+                        <VBox fx:id="leftLinks" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="15.0" alignment="CENTER">
+                            <children>
+                            </children>
+                        </VBox>
+                        <VBox fx:id="content" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="120.0" >
+                            <padding>
+                                <Insets bottom="5.0" top="5.0" left="5.0" right="5.0"/>
+                            </padding>
+                        </VBox>
+                        <VBox fx:id="rightLinks" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="15.0" alignment="CENTER">
+                            <children>
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </children>
+</fx:root>
