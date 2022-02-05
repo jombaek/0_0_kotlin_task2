@@ -80,11 +80,11 @@
                         <padding>
                             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
                         </padding>
-                        <Button fx:id="brightnessFilterButton" text="Brightness"/>
-                        <Button fx:id="greyFilterButton" text="Greyscale"/>
-                        <Button fx:id="sepiaFilterButton" text="Sepia"/>
-                        <Button fx:id="invertFilterButton" text="Invert"/>
-                        <Button fx:id="blurFilterButton" text="Blur"/>
+                        <Button fx:id="brightnessFilterButton" text="Brightness" onAction="#onBrightnessNodeButtonClick"/>
+                        <Button fx:id="greyFilterButton" text="Greyscale" onAction="#onGreyFilterNodeButtonClick"/>
+                        <Button fx:id="sepiaFilterButton" text="Sepia" onAction="#onSepiaFilterNodeButtonClick"/>
+                        <Button fx:id="invertFilterButton" text="Invert" onAction="#onInvertFilterNodeButtonClick"/>
+                        <Button fx:id="blurFilterButton" text="Blur" onAction="#onBlurFilterNodeButtonClick"/>
                     </HBox>
                     <Label text="Filters" style=" -fx-text-fill:dimgray;"/>
                 </VBox>

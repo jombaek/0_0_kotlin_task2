@@ -264,4 +264,25 @@ class NodeImageEditorController {
         nodesPane.children.add(AddImageNode())
     }
 
+    @FXML
+    private fun onBrightnessNodeButtonClick(event: ActionEvent) {
+        nodesPane.children.add(BrightnessNode())
+    }
+    @FXML
+    private fun onGreyFilterNodeButtonClick(event: ActionEvent) {
+        nodesPane.children.add(GreyFilterNode())
+    }
+    @FXML
+    private fun onSepiaFilterNodeButtonClick(event: ActionEvent) {
+        nodesPane.children.add(SepiaFilterNode())
+    }
+    @FXML
+    private fun onInvertFilterNodeButtonClick(event: ActionEvent) {
+        nodesPane.children.add(InvertFilterNode())
+    }
+    @FXML
+    private fun onBlurFilterNodeButtonClick(event: ActionEvent) {
+        nodesPane.children.add(BlurFilterNode())
+    }
+
 }

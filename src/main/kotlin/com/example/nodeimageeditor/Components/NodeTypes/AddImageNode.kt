@@ -10,7 +10,7 @@ class AddImageNode: DraggableNode() {
     var y_val = 0;
     var new_image_val: Image? = null
     init {
-        titleLabel?.text = "AddImage"
+        titleLabel?.text = "Add Image"
 
         initImageView()
 
