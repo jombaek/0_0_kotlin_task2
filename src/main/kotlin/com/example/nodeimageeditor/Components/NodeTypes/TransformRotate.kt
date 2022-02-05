@@ -17,6 +17,8 @@ class TransformRotateNode: DraggableNode() {
         addLeftHandle("Float")
 
         addRightHandle("Image")
+
+        nodeType = NodeType.TRANSFORM_ROTATE
     }
 
     override fun update() {

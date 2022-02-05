@@ -20,6 +20,8 @@ class AddTextNode: DraggableNode() {
         addLeftHandle("String")
 
         addRightHandle("Image")
+
+        nodeType = NodeType.ADD_TEXT
     }
 
     override fun update() {

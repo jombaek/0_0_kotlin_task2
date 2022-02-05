@@ -19,6 +19,8 @@ class TransformScaleNode: DraggableNode() {
         addLeftHandle("Float")
 
         addRightHandle("Image")
+
+        nodeType = NodeType.TRANSFORM_SCALE
     }
 
     override fun update() {

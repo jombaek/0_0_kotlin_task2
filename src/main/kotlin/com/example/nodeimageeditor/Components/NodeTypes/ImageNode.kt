@@ -30,6 +30,8 @@ class ImageNode() : DraggableNode() {
         openButton.prefWidth = 50.0
         content?.children?.add(openButton)
         nodeMainPane?.prefHeight = 130.0
+
+        nodeType = NodeType.IMAGE
     }
     override fun update() {
         nextNode?.update()

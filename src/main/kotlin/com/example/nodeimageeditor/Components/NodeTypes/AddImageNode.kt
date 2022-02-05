@@ -20,6 +20,8 @@ class AddImageNode: DraggableNode() {
         addLeftHandle("Image")
 
         addRightHandle("Image")
+
+        nodeType = NodeType.ADD_IMAGE
     }
 
     override fun update() {

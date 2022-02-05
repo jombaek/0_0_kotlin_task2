@@ -14,6 +14,8 @@ class FinishNode: DraggableNode() {
         addLeftHandle("Image")
 
         relocate(800.0, 220.0)
+
+        nodeType = NodeType.FINISH
     }
 
     override fun update() {

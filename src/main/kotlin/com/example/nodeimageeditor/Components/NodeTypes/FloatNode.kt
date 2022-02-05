@@ -18,6 +18,8 @@ class FloatNode: DraggableNode() {
         }
         input_field!!.prefWidth = 60.0
         content?.children?.add(input_field)
+
+        nodeType = NodeType.FLOAT
     }
     override fun update() {
         nextNode?.update()

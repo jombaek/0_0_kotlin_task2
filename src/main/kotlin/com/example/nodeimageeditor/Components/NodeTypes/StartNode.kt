@@ -12,6 +12,8 @@ class StartNode: DraggableNode() {
         addRightHandle("Image")
 
         relocate(200.0, 220.0)
+
+        nodeType = NodeType.START
     }
     override fun update() {
         nextNode?.update()

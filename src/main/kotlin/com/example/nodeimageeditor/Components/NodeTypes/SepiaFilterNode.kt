@@ -16,6 +16,8 @@ class SepiaFilterNode: DraggableNode() {
         addLeftHandle("Image")
 
         addRightHandle("Image")
+
+        nodeType = NodeType.SEPIA_FILTER
     }
 
     override fun update() {

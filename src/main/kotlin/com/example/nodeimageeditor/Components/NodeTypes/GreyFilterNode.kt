@@ -13,6 +13,8 @@ class GreyFilterNode: DraggableNode() {
         addLeftHandle("Image")
 
         addRightHandle("Image")
+
+        nodeType = NodeType.GREY_FILTER
     }
 
     override fun update() {

@@ -13,6 +13,8 @@ class InvertFilterNode: DraggableNode() {
         addLeftHandle("Image")
 
         addRightHandle("Image")
+
+        nodeType = NodeType.INVERT_FILTER
     }
 
     override fun update() {

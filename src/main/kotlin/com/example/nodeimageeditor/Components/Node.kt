@@ -40,6 +40,7 @@ open class DraggableNode : AnchorPane() {
     var imageView = ImageView()
     var inputTypes: MutableMap<Any, String> = mutableMapOf()
     var outputType: String? = null
+    var nodeType: NodeType? = null
 
     var x: Int = 0
     var y: Int = 0
@@ -163,7 +164,7 @@ open class DraggableNode : AnchorPane() {
             var p = Point2D(this.layoutX, this.layoutY)
             LinkStartSocketPosition = Point2D(0.0, 0.0)
             for (item: Node in rightLinks?.children!!) {
-                if (item.contains(event.x - 8, event.y - 0))
+                if (item.contains(event.x - 6, event.y - 0))
                 {
                     p = Point2D(layoutX + rightLinks!!.layoutX + item.layoutX + 15,
                                 layoutY + titleBar!!.height + rightLinks!!.layoutY + item.layoutY + 15 / 2)

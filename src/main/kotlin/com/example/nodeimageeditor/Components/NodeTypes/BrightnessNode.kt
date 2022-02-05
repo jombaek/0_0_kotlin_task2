@@ -18,6 +18,8 @@ class BrightnessNode: DraggableNode() {
         addLeftHandle("Float")
 
         addRightHandle("Image")
+
+        nodeType = NodeType.BRIGHTNESS_FILTER
     }
 
     override fun update() {

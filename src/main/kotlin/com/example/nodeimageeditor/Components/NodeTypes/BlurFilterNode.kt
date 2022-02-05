@@ -11,7 +11,7 @@ class BlurFilterNode: DraggableNode() {
     var image: Image? = null
     var int_val = 0;
     init {
-        titleLabel?.text = "BlurFilter"
+        titleLabel?.text = "Blur Filter"
 
         initImageView()
 
@@ -19,6 +19,8 @@ class BlurFilterNode: DraggableNode() {
         addLeftHandle("Int")
 
         addRightHandle("Image")
+
+        nodeType = NodeType.BLUR_FILTER
     }
 
     override fun update() {

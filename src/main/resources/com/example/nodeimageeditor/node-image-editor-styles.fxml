@@ -26,10 +26,10 @@
                     <MenuItem fx:id="openImageMenuItem" mnemonicParsing="false" text="Open" accelerator="Shortcut+O" onAction="#onOpenMenuClicked" />
                     <MenuItem fx:id="saveImageMenuItem" mnemonicParsing="false" text="Save" disable="true" accelerator="Shortcut+S" onAction="#onSaveImageMenuClicked" />
                     <MenuItem fx:id="saveImageAsMenuItem" mnemonicParsing="false" text="Save as..." disable="true" accelerator="Shortcut+Shift+S" onAction="#onSaveImageAsMenuClicked"/>
-                    <MenuItem fx:id="saveSceneMenuItem" mnemonicParsing="false" text="Save scene" disable="true" accelerator="Shortcut+G" onAction="#onSaveSceneMenuClicked" />
-                    <MenuItem fx:id="saveSceneAsMenuItem" mnemonicParsing="false" text="Save scene as..." disable="true" accelerator="Shortcut+Shift+G" onAction="#onSaveSceneAsMenuClicked"/>
+                    <MenuItem fx:id="saveSceneMenuItem" mnemonicParsing="false" text="Save scene" accelerator="Shortcut+G" onAction="#onSaveSceneMenuClicked" />
+                    <MenuItem fx:id="saveSceneAsMenuItem" mnemonicParsing="false" text="Save scene as..." accelerator="Shortcut+Shift+G" onAction="#onSaveSceneAsMenuClicked"/>
                     <MenuItem fx:id="openSceneMenuItem" mnemonicParsing="false" text="Open scene" accelerator="Shortcut+Shift+O" onAction="#onOpenSceneMenuClicked" />
-                    <MenuItem mnemonicParsing="false" text="Exit" />
+                    <MenuItem mnemonicParsing="false" text="Exit" onAction="#onExitMenuClicked" />
                 </items>
             </Menu>
         </menus>
@@ -106,11 +106,8 @@
         </HBox>
     </ScrollPane>
     <AnchorPane prefWidth="1087.0" prefHeight="700.0">
-        <StackPane fx:id="canvasPane"
+        <StackPane fx:id="scenePane"
                    AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
-                   onMousePressed="#onCanvasMousePressed"
-                   onMouseDragged="#onCanvasMouseDragged"
-                   onMouseReleased="#onCanvasMouseReleased"
                    style=" -fx-background-color:rgba(0, 0, 0, 1);">
             <ImageView fx:id="fullImageView" visible="false" fitWidth="1087.0" fitHeight="700.0" preserveRatio="true"/>
             <AnchorPane fx:id="nodesPane"

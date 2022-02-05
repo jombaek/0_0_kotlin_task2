@@ -19,6 +19,8 @@ class TransformMoveNode: DraggableNode() {
         addLeftHandle("Float")
 
         addRightHandle("Image")
+
+        nodeType = NodeType.TRANSFORM_MOVE
     }
     override fun update() {
         image = readInput(0, null) as Image?
