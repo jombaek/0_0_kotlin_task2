@@ -285,4 +285,17 @@ class NodeImageEditorController {
         nodesPane.children.add(BlurFilterNode())
     }
 
+
+    @FXML
+    private fun onTransformMoveNodeButtonClick(event: ActionEvent) {
+        nodesPane.children.add(TransformMoveNode())
+    }
+    @FXML
+    private fun onTransformScaleNodeButtonClick(event: ActionEvent) {
+        nodesPane.children.add(TransformScaleNode())
+    }
+    @FXML
+    private fun onTransformRotateNodeButtonClick(event: ActionEvent) {
+        nodesPane.children.add(TransformRotateNode())
+    }
 }
