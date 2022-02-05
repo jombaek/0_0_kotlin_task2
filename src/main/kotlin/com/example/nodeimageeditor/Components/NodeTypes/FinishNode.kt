@@ -19,7 +19,7 @@ class FinishNode: DraggableNode() {
     override fun update() {
         image = readInput(0, null) as Image?
         imageView.image = image
-        //app.fullImageView.image = image
+        app.controller.changeFullImageView(image)
         nextNode?.update()
     }
 }

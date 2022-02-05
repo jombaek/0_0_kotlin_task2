@@ -19,6 +19,8 @@ lateinit var LinkEndSocketPosition: Point2D
 
 open class DraggableNode : AnchorPane() {
     @FXML
+    var nodeMainPane: AnchorPane? = null
+    @FXML
     var leftLinks: VBox? = null
     @FXML
     var rightLinks: VBox? = null
@@ -99,15 +101,17 @@ open class DraggableNode : AnchorPane() {
         }
 
         titleBar!!.onDragDetected = EventHandler { event ->
-            parent.onDragOver = contextDragOver
-            parent.onDragDropped = contextDragDropped
+            try {
+                parent.onDragOver = contextDragOver
+                parent.onDragDropped = contextDragDropped
 
-            offset = Point2D(event.x, event.y)
-            updatePoint(Point2D(event.sceneX, event.sceneY))
+                offset = Point2D(event.x, event.y)
+                updatePoint(Point2D(event.sceneX, event.sceneY))
 
-            val content = ClipboardContent()
-            content[stateAddNode] = "node"
-            startDragAndDrop(*TransferMode.ANY).setContent(content)
+                val content = ClipboardContent()
+                content[stateAddNode] = "node"
+                startDragAndDrop(*TransferMode.ANY).setContent(content)
+            } catch (e: NullPointerException){}
         }
 
         titleClose!!.onMousePressed = EventHandler { event ->
@@ -231,8 +235,8 @@ open class DraggableNode : AnchorPane() {
     }
 
     fun initImageView() {
-        imageView.fitWidth = 60.0
-        imageView.fitHeight = 15.0
+        imageView.fitWidth = 120.0
+        imageView.fitHeight = 60.0
         imageView.isPreserveRatio = true
         content?.children?.add(imageView)
     }
