@@ -38,7 +38,11 @@
                             <children>
                             </children>
                         </VBox>
-                        <VBox fx:id="content" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="120.0" alignment="CENTER"/>
+                        <VBox fx:id="content" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="120.0" alignment="CENTER" spacing="5.0">
+                            <padding>
+                                <Insets left="5.0" right="5.0"/>
+                            </padding>
+                        </VBox>
                         <VBox fx:id="rightLinks" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="15.0" alignment="CENTER">
                             <children>
                             </children>

@@ -29,7 +29,7 @@ class ImageNode() : DraggableNode() {
         }
         openButton.prefWidth = 50.0
         content?.children?.add(openButton)
-        nodeMainPane?.prefHeight = 120.0
+        nodeMainPane?.prefHeight = 130.0
     }
     override fun update() {
         nextNode?.update()

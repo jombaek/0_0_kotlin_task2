@@ -67,8 +67,8 @@
                         <padding>
                             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
                         </padding>
-                        <Button fx:id="addTextNodeButton" text="Text"/>
-                        <Button fx:id="addImageNodeButton" text="Image"/>
+                        <Button fx:id="addTextNodeButton" text="Text" onAction="#onAddTextNodeButtonClick"/>
+                        <Button fx:id="addImageNodeButton" text="Image" onAction="#onAddImageNodeButtonClick"/>
                     </HBox>
                     <Label text="Add" style=" -fx-text-fill:dimgray;"/>
                 </VBox>

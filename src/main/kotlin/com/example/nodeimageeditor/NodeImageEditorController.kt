@@ -255,4 +255,13 @@ class NodeImageEditorController {
         nodesPane.children.add(ImageNode())
     }
 
+    @FXML
+    private fun onAddTextNodeButtonClick(event: ActionEvent) {
+        nodesPane.children.add(AddTextNode())
+    }
+    @FXML
+    private fun onAddImageNodeButtonClick(event: ActionEvent) {
+        nodesPane.children.add(AddImageNode())
+    }
+
 }

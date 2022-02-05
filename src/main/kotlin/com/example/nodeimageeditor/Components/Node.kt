@@ -16,6 +16,7 @@ import java.util.*
 lateinit var LinkStartNode: DraggableNode
 lateinit var LinkStartSocketPosition: Point2D
 lateinit var LinkEndSocketPosition: Point2D
+var endSocketIndex: Int = 0
 
 open class DraggableNode : AnchorPane() {
     @FXML
@@ -186,6 +187,10 @@ open class DraggableNode : AnchorPane() {
             if (inputTypes[event.source] == LinkStartNode.outputType && inputs[event.source] == null && notALoop(
                     LinkStartNode, this)) {
                 LinkStartNode.link.isVisible = true
+                val item = event.source as Node
+                if (item != null) {
+                    LinkEndSocketPosition = Point2D(-45.0, item.boundsInParent.centerY - 15)
+                }
                 LinkStartNode.link.bindStartEnd(LinkStartNode, this, LinkStartSocketPosition, LinkEndSocketPosition)
 
                 inputs[event.source] = LinkStartNode
@@ -203,10 +208,8 @@ open class DraggableNode : AnchorPane() {
                 if (!link.isVisible)
                     link.isVisible = true
                 var p = Point2D(event.x, event.y)
-                LinkEndSocketPosition = Point2D(-45.0, titleBar!!.height + rightLinks!!.layoutY - 15)
                 link.setEnd(p)
             }
-
             event.consume()
         }
 
@@ -250,13 +253,10 @@ open class DraggableNode : AnchorPane() {
         inputTypes[leftLinks?.children!![leftLinks?.children!!.size - 1]] = type
         inputsByIndex[leftLinks?.children!!.size - 1] = leftLinks?.children!![leftLinks?.children!!.size - 1]
         when (type) {
-            "Int" -> new_handle.style = "-fx-background-color: rgba(100, 100, 255, 1);"
-            "Float" -> new_handle.style = "-fx-background-color: rgba(255, 100, 100, 1);"
-            "String" -> new_handle.style = "-fx-background-color: rgba(100, 255, 100, 1);"
-            "Image" -> new_handle.style = "-fx-background-color: rgba(100, 100, 100, 1);"
-        }
-        for (item: Node in leftLinks?.children!!) {
-            (item as AnchorPane).prefHeight = 15.0 / leftLinks?.children!!.size
+            "Int" -> new_handle.style = "-fx-background-color: rgba(100, 100, 255, 1); -fx-background-radius: 0 10 10 0;"
+            "Float" -> new_handle.style = "-fx-background-color: rgba(255, 100, 100, 1); -fx-background-radius: 0 10 10 0;"
+            "String" -> new_handle.style = "-fx-background-color: rgba(100, 255, 100, 1); -fx-background-radius: 0 10 10 0;"
+            "Image" -> new_handle.style = "-fx-background-color: rgba(100, 100, 100, 1); -fx-background-radius: 0 10 10 0;"
         }
     }
 
@@ -268,10 +268,10 @@ open class DraggableNode : AnchorPane() {
         rightLinks?.children?.add(new_handle)
         outputType = type
         when (type) {
-            "Int" -> new_handle.style = "-fx-background-color: rgba(100, 100, 255, 1);"
-            "Float" -> new_handle.style = "-fx-background-color: rgba(255, 100, 100, 1);"
-            "String" -> new_handle.style = "-fx-background-color: rgba(100, 255, 100, 1);"
-            "Image" -> new_handle.style = "-fx-background-color: rgba(100, 100, 100, 1);"
+            "Int" -> new_handle.style = "-fx-background-color: rgba(100, 100, 255, 1); -fx-background-radius: 10 0 0 10;"
+            "Float" -> new_handle.style = "-fx-background-color: rgba(255, 100, 100, 1); -fx-background-radius: 10 0 0 10;"
+            "String" -> new_handle.style = "-fx-background-color: rgba(100, 255, 100, 1); -fx-background-radius: 10 0 0 10;"
+            "Image" -> new_handle.style = "-fx-background-color: rgba(100, 100, 100, 1); -fx-background-radius: 10 0 0 10;"
         }
     }
 
