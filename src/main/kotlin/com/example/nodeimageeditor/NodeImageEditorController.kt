@@ -189,6 +189,12 @@ class NodeImageEditorController {
             saveImageMenuItem.isDisable = false
             saveImageAsMenuItem.isDisable = false
         }
+        else {
+            fullImageView.image = null
+            hasImage = false
+            saveImageMenuItem.isDisable = true
+            saveImageAsMenuItem.isDisable = true
+        }
     }
 
     private fun saveImage() {

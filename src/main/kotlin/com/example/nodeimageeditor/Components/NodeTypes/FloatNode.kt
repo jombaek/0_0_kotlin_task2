@@ -11,6 +11,7 @@ class FloatNode: DraggableNode() {
         addRightHandle("Float")
 
         input_field = TextField()
+        input_field!!.text = "0.0"
         input_field!!.textProperty().addListener { observable, oldValue, newValue ->
             if (newValue.toFloatOrNull() != null)
                 float_val = newValue.toFloat()
